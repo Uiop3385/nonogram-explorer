@@ -1,0 +1,24 @@
+﻿<Window x:Class="Nonogramme.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nonogramme"
+        mc:Ignorable="d"
+        Title="Nonogram Explorer" SizeToContent="WidthAndHeight" MaxHeight="800" MaxWidth="1200" ResizeMode="NoResize" Closing="Window_Closing">
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Left">
+            <Button Name="BtnLoad" Width="100" Height="30" Margin="0,0,10,0" Click="BtnLoad_Click">Load</Button>
+            <Button Name="BtnTest" Width="100" Height="30" Margin="0,0,10,0" Click="BtnTest_Click" IsEnabled="False">Test</Button>
+            <Button Name="BtnSolve" Width="100" Height="30" Margin="0,0,10,0" Click="BtnSolve_Click" IsEnabled="False">Solve</Button>
+            <TextBlock Name="TxtStatus" VerticalAlignment="Center" />
+        </StackPanel>
+        <ListBox x:Name="LBXPuzzleList" DockPanel.Dock="Left" Margin="0,0,10,0" Width="150" MinHeight="300" SelectionChanged="LBXPuzzleList_SelectionChanged">
+            <ListBoxItem>Load a directory</ListBoxItem>
+            <ListBoxItem>to get started!</ListBoxItem>
+        </ListBox>
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <Grid Name="MainGrid" Margin="5,5,5,5"/>
+        </ScrollViewer>
+    </DockPanel>
+</Window>
